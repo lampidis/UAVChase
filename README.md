@@ -49,21 +49,21 @@ roslaunch rotors_gazebo mav_hovering_example.launch mav_name:=firefly world_name
 κατεβαστε τα worlds apo to https://github.com/Hunter314/uavcc-simulator καπου στο pc και καντε οτι λενε οι οδηγιες απο κατω:
 
 Step 1: Open terminal in the trial_1_setup folder and run the following commands
-
+```
 mkdir build
 cd build
 cmake ../
 make
-
+```
 Step 2: Copy and Paste this on the terminal inside trial_1_setup/build/ and press enter:
-
+```
 echo "export GAZEBO_PLUGIN_PATH=`pwd`:$GAZEBO_PLUGIN_PATH" >> ~/.bashrc
-
+```
 Step 3: Run the environment/world in gazebo
-
+```
 cd ~/trial_1_setup
 gazebo trial_1.world
-
+```
 θα πρεπει να διχνει τον κοσμο και να κουνιεται το rover
 
 8)gazebo models
