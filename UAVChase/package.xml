@@ -1,0 +1,24 @@
+<package format="2">
+  <name>UAVChase</name>
+  <version>0.0.0</version>
+  <description>UAVChase</description>
+
+  <maintainer email="gimarkostamos@gmail.com">George Markostamos</maintainer>
+
+
+  <author>George Markostamos</author>
+  <license>TODO</license>
+
+  <!-- Dependencies which this package needs to build itself. -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Dependencies needed after this package is compiled. -->
+  <exec_depend>rotors_simulator</exec_depend>
+  <exec_depend>uav_sim</exec_depend>
+  <exec_depend>vision</exec_depend>
+  <exec_depend>control</exec_depend>
+  
+  <export>
+    <metapackage/>
+  </export>
+</package>

@@ -1,0 +1,7 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/markostamos/ws/UAVChase/devel/lib/python3/dist-packages",
+        "/home/markostamos/ws/thesis/rotors_simulator_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ]
+}
