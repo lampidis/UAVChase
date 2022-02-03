@@ -46,6 +46,7 @@
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
     
     <node name="vel_controller_node" pkg="control" type="vel_controller_node.py" output="screen"/>
+
     <node name="rviz_goal_publisher_node" pkg="control" type="rviz_goal_publisher_node.py" output="screen"/>
     
     
