@@ -21,8 +21,8 @@
 
 <robot name="$(arg mav_name)" xmlns:xacro="http://ros.org/wiki/xacro">
   <!-- Instantiate the mav with a generic odometry sensor. -->
-  <xacro:include filename="$(find uav_sim)/urdf/mav_generic_odometry_sensor.gazebo" />
-
+  <!-- <xacro:include filename="$(find uav_sim)/urdf/mav_generic_odometry_sensor.gazebo" /> -->
+  <xacro:include filename="$(find rotors_description)/urdf/$(arg mav_name)_base.xacro" />
   <!-- Mount a VI-sensor in front of the Firefly. -->
   <xacro:vi_sensor_macro
     namespace="${namespace}/vi_sensor"
@@ -30,7 +30,7 @@
     enable_cameras="false"
     enable_depth="true"
     enable_ground_truth="false">
-    <origin xyz="0.1 0.0 -0.03" rpy="0.0 0.1 0.0" />
+    <origin xyz="0.2 0.0 -0.08" rpy="0.0 0.45 0.0" />
   </xacro:vi_sensor_macro>
 
 </robot>

@@ -64,65 +64,71 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        iris/base_link:
+        neo11/base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        iris/base_link_inertia:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        iris/imu_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        iris/imugt_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        iris/odometry_sensor1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        iris/odometry_sensorgt_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        iris/rotor_0:
+        neo11/base_link_inertia:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        iris/rotor_1:
+        neo11/imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        neo11/imugt_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        neo11/odometry_sensorgt_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        neo11/rotor_0:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        iris/rotor_2:
+        neo11/rotor_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        iris/rotor_3:
+        neo11/rotor_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        iris/vi_sensor/camera_depth_link:
+        neo11/rotor_3:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        iris/vi_sensor/camera_depth_optical_center_link:
+        neo11/rotor_4:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        iris/vi_sensor/imu_link:
+          Value: true
+        neo11/rotor_5:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        iris/vi_sensor/vi_sensor_link:
+          Value: true
+        neo11/vi_sensor/camera_depth_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        neo11/vi_sensor/camera_depth_optical_center_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        neo11/vi_sensor/imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        neo11/vi_sensor/vi_sensor_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -135,7 +141,7 @@ Visualization Manager:
       Visual Enabled: true
     - Class: rviz/Image
       Enabled: true
-      Image Topic: /iris/vi_sensor/camera_depth/camera/image_raw
+      Image Topic: /neo11/vi_sensor/camera_depth/camera/image_raw
       Max Value: 1
       Median window: 5
       Min Value: 0
@@ -166,9 +172,9 @@ Visualization Manager:
       Queue Size: 10
       Selectable: true
       Size (Pixels): 5
-      Size (m): 0.009999999776482582
-      Style: Points
-      Topic: /iris/vi_sensor/camera_depth/depth/points
+      Size (m): 0.029999999329447746
+      Style: Flat Squares
+      Topic: /neo11/vi_sensor/camera_depth/depth/points
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -200,8 +206,8 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Class: rviz/ThirdPersonFollower
-      Distance: 7.928233623504639
+      Class: rviz/Orbit
+      Distance: 5.6195878982543945
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -209,17 +215,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -6.796669960021973
-        Y: 0.22289162874221802
-        Z: 9.5367431640625e-07
-      Focal Shape Fixed Size: true
+        X: -5.941966533660889
+        Y: 0.23608796298503876
+        Z: 0.7992596626281738
+      Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5254003405570984
+      Pitch: 0.28539833426475525
       Target Frame: <Fixed Frame>
-      Yaw: 3.115363359451294
+      Yaw: 3.2153985500335693
     Saved: ~
 Window Geometry:
   Displays:
