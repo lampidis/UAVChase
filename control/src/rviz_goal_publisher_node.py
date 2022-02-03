@@ -15,7 +15,7 @@ class rviz_goal_publisher_node:
         rospy.Subscriber('/move_base_simple/goal', PoseStamped, self.callback)
 
     def callback(self, goal_pose):
-        goal_pose.pose.position.z = rospy.get_param('~altitude', default=1)
+        goal_pose.pose.position.z = rospy.get_param('~altitude', default=0.7)
         self.lee_publisher.publish(goal_pose)
 
 
