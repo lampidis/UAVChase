@@ -1,4 +1,9 @@
-# UAVChase
+This is a proof of consept for "2022 IEEE Autonomous Unmanned Aerial Vehicles (UAV) Competition"
+
+We got short on time and our work is not complete. We managed to test each part seperately and it worked pretty well, but when we tried to combine each part, we couldn't make it work.
+
+
+# UAVChase Initialize project
 
 1)install dependencies
 ```
@@ -38,15 +43,14 @@ source ~/.bashrc
 ```
 5)τεστ
 
-θα πρεπει τωρα μετα την εντολη
+if everything works fine then it should open gazebo and the drone should hover.
 ``` 
 roslaunch rotors_gazebo mav_hovering_example.launch mav_name:=firefly world_name:=basic
 ```
-να ανοιγει το gazebo και το drone να κανει hover.
 
 6)trial worlds
 
-κατεβαστε τα worlds apo to https://github.com/Hunter314/uavcc-simulator καπου στο pc και καντε οτι λενε οι οδηγιες απο κατω:
+Follow the steps of the repository https://github.com/Hunter314/uavcc-simulator:
 
 Step 1: Open terminal in the trial_1_setup folder and run the following commands
 ```
@@ -64,12 +68,11 @@ Step 3: Run the environment/world in gazebo
 cd ~/trial_1_setup
 gazebo trial_1.world
 ```
-θα πρεπει να διχνει τον κοσμο και να κουνιεται το rover
+The world of the simulator should open with a moving rover.
 
 8)gazebo models
 
-αντιγράψτε όλους τους φακέλους από το trial_1_setup που αναφέρονται σε μοντέλα (π.χ asphalt_rode) στον φακελο ~/.gazebo/models  (είναι κρυφός φάκελος)
-αλλάξτε από τα μοντέλα ότι λέει εδώ https://github.com/Hunter314/uavcc-simulator/issues/2 για να έχει μεγαλύτερα κτήρια
+copy and paste all mmodels from the trial_1_setup to the dir ~/.gazebo/models
 
 7)UAVChase
 ```
@@ -79,14 +82,19 @@ cd ~/catkin_Ws
 catkin build
 ```
 
-8)Τεστ
+8)Test
 
-αν το build τελειωσει χωρίς errors τρέξτε
 ```
 roslaunch uav_sim trial1.launch
 
 ```
-θα πρέπει να δείτε να ανοιγει το rviz και το gazebo και να φαινεται στο rviz η κάμερα και το pointcloud με χρώμα.
+It should open rviz and gazebo.
 
-για να κουνηθει το drone οι εντολές δίνονται στα topics /iris/command/pose και /iris/command/cmd_vel
 
+# Control
+
+
+# Vision
+The part of the computer vision of the drone was conducted using the camera image. For the trial 1 and 2 we used an ord detection algorithm that takes advantage of the color of the orb. We used the HSV parameters of the image in order to transform the image and extract only the x,y orb_center. First, we took sample images from the camera looking the rover and manualy find the prefered HSV (min,max) parameters. Then, we took in real time the image_raw from our drone and calculate the orb in the x,y camera frame.
+In order to calculate the 3D x,y,z point of the orbit we constructed a recuring function that transforms the 3D point cloud into a 2D frame in the exact point of the camera. The function tries to match each 3D point from the point Cloud of the drone to the 2D point of the camera frame. Then we pass the target point into a topic in order for the control team to use it to direct the drone.
+We managed to write each code individualy but ended up not be able to connect them before the deadline.
