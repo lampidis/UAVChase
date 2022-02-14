@@ -1,6 +1,6 @@
 This is a proof of consept for "2022 IEEE Autonomous Unmanned Aerial Vehicles (UAV) Competition"
 
-We got short on time and our work is not complete. We managed to test each part seperately and it worked pretty well, but when we tried to combine each part, we couldn't make it work.
+We got short on time and our work is not complete. We managed to test each part seperately and it worked pretty well, but when we tried to combine each part, we couldn't make it work. So, we want to show your our unfinished work and our approach to this problem.
 
 
 # UAVChase Initialize project
@@ -93,6 +93,7 @@ It should open rviz and gazebo.
 
 # Control
 To meet the requirements of the competition, a new controller was constructed, due to bugs and problems that we encountered while using the given code. The first node(rviz_goal_publisher_node.py) has the sole purpose of receiving goal coordinates from the /move_base_simple/goal topic, initializing the altitude parameter for the drone and publishing its goal position to the /command/pose topic. In the vel_controller_node.py we implemented a simple forward integration velocity controller which was based on the lee position controller. It subscribes to the /<drone_name>/command/cmd_vel topic and publishes a desired position to the /<drone_name>/command/pose topic every tstep seconds via the lee_pub_callback function. To calculate where the drone would go a simple math equation was used, specifically: "new_pose = velocity * timestep + old_pose" and if it was given a negative point in the z axis it would preform a landing maneuver. That same principle was applied for the orientation of the uav in all axis of movement. These variables are being published as PoseStamped messages to the desired topic. Functions for the updating of the drone's position and velocity were key additions for a smooth course.
+In score.py we wanted to house the PIDs which would use messages received from the /command/pose topic and publish the final velocity to /command/cmd_vel topic. We encountered difficulties and minor setbacks while developing the code, mainly in the code's adaptability area that led to the incompletion of the project.
 
 # Vision
 The part of the computer vision of the drone was conducted using the camera image. For the trial 1 and 2 we used an ord detection algorithm that takes advantage of the color of the orb. We used the HSV parameters of the image in order to transform the image and extract only the x,y orb_center. First, we took sample images from the camera looking the rover and manualy find (range_detector.py) the prefered HSV (min,max) parameters. Then, we took in real time the image_raw from our drone and calculate the orb in the x,y camera frame.
